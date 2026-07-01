@@ -12,8 +12,12 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
-
-        return []; // replace this return statement with your own
+        double[] multiples = new double[length];// in this part I create a array 
+        for (int i = 1; i <= length; i++)// I loop through as many multiples as needed
+        {
+            multiples[i-1]=number*i;// I'm doing the multiplication operation 
+        }
+        return multiples; // return array
     }
 
     /// <summary>
@@ -29,5 +33,12 @@ public static class Arrays
         // Remember: Using comments in your program, write down your process for solving this problem
         // step by step before you write the code. The plan should be clear enough that it could
         // be implemented by another person.
+        List<int> amountData = data.GetRange(data.Count-amount,amount);//I get the data that would come first
+        List<int> amountData1 = data.GetRange(0,data.Count-amount);// I get the data that would come ultimate
+
+        data.Clear();//clear the list<data>
+        data.AddRange(amountData);//I add the data ultimate
+        data.AddRange(amountData1);// I add the data first
+        
     }
 }
