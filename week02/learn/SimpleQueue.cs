@@ -65,9 +65,9 @@
     private int Dequeue() {
         if (_queue.Count <= 0)
             throw new IndexOutOfRangeException();
-
-        var value = _queue[1];
-        _queue.RemoveAt(1);
+        var lastindex = _queue.Count - 1;
+        var value = _queue[lastindex];
+        _queue.RemoveAt(lastindex);
         return value;
     }
 }
